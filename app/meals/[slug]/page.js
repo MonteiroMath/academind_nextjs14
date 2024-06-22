@@ -2,11 +2,16 @@ import styles from "./page.module.css";
 import { getMeal } from "@/lib/meals";
 
 import Image from "next/image";
+import { notFound } from "next/navigation";
 
 function MealsSlugPage({ params }) {
   const { slug } = params;
 
   const meal = getMeal(slug);
+
+  if (!meal) {
+    notFound();
+  }
 
   const parsedInstructions = meal.instructions.replace(/\n/g, "<br/>");
 
