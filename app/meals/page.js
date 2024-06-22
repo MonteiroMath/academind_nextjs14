@@ -2,8 +2,10 @@ import Link from "next/link";
 import styles from "./page.module.css";
 
 import MealsGrid from "@/components/meals/meals-grid";
+import { getMeals } from "@/lib/meals";
 
 function MealsPage() {
+  const meals = getMeals();
   return (
     <>
       <header className={styles.header}>
@@ -15,14 +17,12 @@ function MealsPage() {
             fun!
           </p>
           <p className={styles.cta}>
-            <Link href="/meals/share">
-              Share Your Favorite Recipe
-            </Link>
+            <Link href="/meals/share">Share Your Favorite Recipe</Link>
           </p>
         </h1>
       </header>
       <main className={styles.main}>
-        <MealsGrid meals={[]} />
+        <MealsGrid meals={meals} />
       </main>
     </>
   );
