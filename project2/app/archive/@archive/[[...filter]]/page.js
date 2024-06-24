@@ -7,13 +7,13 @@ import {
 } from "@/lib/news";
 import { getAvailableNewsYears } from "@/lib/news";
 
-function FilteredNewsPage({ params }) {
+async function FilteredNewsPage({ params }) {
   const { filter } = params;
 
   const selectedYear = filter?.[0];
   const selectedMonth = filter?.[1];
 
-  let links = getAvailableNewsYears();
+  let links = await getAvailableNewsYears();
   let news;
 
   if (selectedYear && !selectedMonth) {
