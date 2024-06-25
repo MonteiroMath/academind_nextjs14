@@ -28,6 +28,13 @@ function PostForm({ action }) {
       <p className="form-actions">
         <FormSubmit />
       </p>
+      {currentState.errors && (
+        <ul className="form-errors">
+          {currentState.errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
+        </ul>
+      )}
     </form>
   );
 }
