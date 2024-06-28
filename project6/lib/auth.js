@@ -27,3 +27,39 @@ export async function createAuthSession(userId) {
     sessionCookie.attributes
   );
 }
+
+export async function verifyAuth() {
+  const sessionCookie = cookies().get(lucia.sessionCookieName);
+
+  if (!sessionCookie) return { user: null, session: null };
+
+  const sessionId = sessionCookie.value;
+
+  if (!sessionId) return { user: null, session: null };
+
+  const result = await lucia.validateSession(sessionId);
+
+  //workaround from Lucia documentation so next doesn't complain about setting cookies during the page rendering
+  try {
+    if (result.session && result.session.fresh) {
+      lucia.createSessionCookie(result.session.id);
+      cookies().set(
+        sessionCookie.name,
+        sessionCookie.value,
+        sessionCookie.attributes
+      );
+    }
+  } catch {}
+
+  //clear session data
+  if (!result.session) {
+    const sessionCookie = lucia.createBlankSessionCookie();
+    cookies().set(
+      sessionCookie.name,
+      sessionCookie.value,
+      sessionCookie.attributes
+    );
+  }
+
+  return result;
+}
