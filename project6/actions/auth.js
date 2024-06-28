@@ -25,6 +25,8 @@ export async function signup(prevState, formData) {
 
   try {
     const userId = createUser(email, hashUserPassword(password));
+
+    console.log(userId);
     await createAuthSession(userId);
     redirect("/training");
   } catch (error) {

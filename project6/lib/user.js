@@ -4,5 +4,5 @@ export function createUser(email, password) {
     .prepare("INSERT INTO users (email, password) VALUES (?, ?)")
     .run(email, password);
 
-  return result.lastInsertRowId;
+  return result.lastInsertRowid;
 }
