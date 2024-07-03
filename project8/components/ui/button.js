@@ -1,11 +1,19 @@
 import Link from "next/link";
 import classes from "./button.module.css";
 
-function Button({ link, children }) {
+function Button({ onClick, link, children }) {
+  if (link) {
+    return (
+      <Link className={classes.btn} href={link}>
+        {children}
+      </Link>
+    );
+  }
+
   return (
-    <Link className={classes.btn} href={link}>
+    <button className={classes.button} onClick={onClick}>
       {children}
-    </Link>
+    </button>
   );
 }
 
