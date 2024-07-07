@@ -18,6 +18,7 @@ export async function getStaticProps(context) {
     props: {
       featuredEvents,
     },
+    revalidate: 60 * 30,
   };
 }
 
