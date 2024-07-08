@@ -29,7 +29,7 @@ function FilteredEventsPage({ hasError, filteredEvents, date }) {
         <title>Filtered Events</title>
         <meta
           name="description"
-          content={`All events for ${numMonth}/${numYear}`}
+          content={`All events for ${date.numMonth}/${date.numYear}`}
         />
       </Head>
       <ResultsTitle date={date} />
