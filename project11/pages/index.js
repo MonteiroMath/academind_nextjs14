@@ -9,6 +9,11 @@ function HomePage() {
 
     const email = emailRef.current.value;
     const feedback = feedbackRef.current.value;
+
+    fetch("/feedback", {
+      email,
+      feedback,
+    });
   }
 
   return (
