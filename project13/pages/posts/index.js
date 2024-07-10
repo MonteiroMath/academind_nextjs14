@@ -1,5 +1,11 @@
+import Hero from "../../components/home-page/hero";
+
 function AllPostsPage() {
-  return <div> All Posts Page </div>;
+  return (
+    <>
+      <div> All Pages</div>
+    </>
+  );
 }
 
 export default AllPostsPage;
