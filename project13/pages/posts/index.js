@@ -10,8 +10,11 @@ function AllPostsPage({ posts }) {
   );
 }
 
+
 export function getStaticProps() {
   const posts = getAllPosts();
+
+  
 
   return { props: { posts }, revalidate: 600 };
 }
