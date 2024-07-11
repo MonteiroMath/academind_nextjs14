@@ -1,0 +1,14 @@
+---
+
+title: 'Getting Started with nextJS'
+date: '2022-10-15'
+image: 'getting-started-with-nextjs.png'
+slug: 'getting-started-nextjs'
+excerpt: 'NextJS is a the React framework for production'
+isFeature: true
+
+---
+
+#This is a title
+
+This is some regular text with a [link](https://google.com)
