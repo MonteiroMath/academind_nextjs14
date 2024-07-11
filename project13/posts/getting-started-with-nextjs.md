@@ -3,9 +3,9 @@
 title: 'Getting Started with nextJS'
 date: '2022-10-15'
 image: 'getting-started-with-nextjs.png'
-slug: 'getting-started-nextjs'
+slug: 'getting-started-with-nextjs'
 excerpt: 'NextJS is a the React framework for production'
-isFeature: true
+isFeatured: true
 
 ---
 
